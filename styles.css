@@ -1,0 +1,155 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+    margin: 0 auto; 
+    max-width: 700px;
+    padding: 1.5em;
+}
+
+.section-block {
+    margin-bottom: 3em;
+}
+
+.question-block,
+.rejection {
+    margin-left: 40px;
+}
+
+.section-block > .question-block:first-of-type,
+.question-block.no-indent,
+.section-block.question-block {
+    margin-left: 0;
+}
+
+*:not(.answer) > .question-block {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    margin-bottom: 0;
+}
+
+.question-block .question-block.sub-block {
+    margin-bottom: 3em;
+}
+
+.question-block {
+    position: relative;
+}
+
+.question-block,
+.answer-block,
+.intro-block {
+    border-left-width: 1px;
+    border-left-color: #aaa;
+    border-left-style: solid;
+    padding-left: 1em;
+}
+
+.answer-block {
+    margin-bottom: 1.5em;
+}
+
+.meta {
+    margin-bottom: 0em;
+    font-size: 0.875em;
+    font-family: "Roboto Mono";
+    font-weight: 500;
+    color: #aaa;
+}
+
+.meta-big {
+    font-size: 1em;
+    color: #666;
+}
+
+.meta-extra-big {
+    font-size: 1.25em;
+    color: #666;
+    margin-top: 0.5em;
+}
+
+.rejection-block .meta {
+    color: red;
+}
+.rejection-block .rejection:before {
+    content: '';
+    display: none;
+}
+.rejection-block .rejection {
+    font-size: 1em;
+}
+
+.question {
+    margin: .25em 0;
+    font-weight: 500;
+}
+
+.answer {
+    margin: .25em 0;
+}
+
+.explanation {
+    margin-top: 0em;
+    margin-bottom: 0.5em;
+    font-family: "Roboto Mono";
+    font-weight: 300;
+    font-size: 0.75em;
+}
+
+.rejection {
+    margin-top: 0.5em;
+    font-weight: 300;
+    font-size: 0.875em;
+}
+
+.rejection:before {
+    content: "Rejected: ";
+    color: red;
+    font-weight: 500;
+}
+
+.meta + .aside {
+    margin-top: .25em;
+}
+
+.meta span {
+    font-weight: 300;
+}
+
+.answer-list {
+    list-style: none;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-padding-start: 0px;
+    display: block;
+    margin-left: 40px;
+}
+
+.no-bottom-margin {
+    margin-bottom: 0;
+}
+
+.label {
+    transform: translate(0%, 50%) rotate(270deg) ;
+    transform-origin: left;
+    font-size: 0.875em;
+    font-family: "Roboto Condensed";
+    font-weight: 500;
+    color: #333;
+    padding-bottom: 1.25em;
+}
+
+.label:not(.active) { display: none; }
+
+.label.floating {
+    position: fixed;
+    bottom: 0;
+}
+
+.label.fixed {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+}

@@ -1,0 +1,1 @@
+Girls get a penalty payment if they are seduced/raped in certain cases (listed). They get a penalty because even though they would die by "divine death penalty" they don't incur human capital punishment.
