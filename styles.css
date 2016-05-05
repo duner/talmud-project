@@ -2,6 +2,16 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+header .meta {
+    margin-bottom: 0.25;
+    margin-top: 0;
+    color: #444;
+}
+
+header {
+    margin-bottom: 2em;
+}
+
 .wrapper {
     margin: 0 auto; 
     max-width: 700px;
@@ -64,7 +74,7 @@ body {
 }
 
 .meta-extra-big {
-    font-size: 1.25em;
+    font-size: 1em;
     color: #666;
     margin-top: 0.5em;
 }
@@ -138,13 +148,23 @@ body {
     font-weight: 500;
     color: #333;
     padding-bottom: 1.25em;
+
+    visibility: visible;
+    opacity: 1;
+    // transition: opacity .25s linear;
+
 }
 
-.label:not(.active) { display: none; }
+.label:not(.active) { 
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .25s linear;
+}
 
 .label.floating {
     position: fixed;
     bottom: 0;
+    transform: translate(0%, 50%) rotate(270deg) translate(.5em, -1.15em)
 }
 
 .label.fixed {
@@ -152,4 +172,20 @@ body {
     left: 0;
     bottom: 0;
     margin: 0;
+}
+
+span.popover {
+    background-color: #eee;
+    padding: 0.125em 0.25em;
+    border-radius: 5px;
+}
+
+span.popover:before {
+    content: "\0f05a";
+    font-family: FontAwesome;
+    margin-right: 0.5em;
+}
+
+span.popover:hover {
+    background-color: #aaa;
 }

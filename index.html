@@ -4,36 +4,48 @@
     <meta charset="UTF-8">
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500|Roboto+Condensed:300,300italic|Roboto+Mono:400,300,100,500|Roboto+Slab' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
     <script src="bower_components/waypoints/lib/jquery.waypoints.min.js"></script>
     <script src="bower_components/waypoints/lib/shortcuts/inview.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+    <script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+
 
     <title>Duner</title>
 </head>
 <body>
     <div class="wrapper">
+        <header>
+            <p class="meta">Alex Duner</h3>
+            <p class="meta">RELIGION 339</h3>
+            <p class="meta">Prof. Wimpfheimer</p>
+            <p class="meta">Midterm Exercise</p>
+        </header>
         <div class="intro section-block intro-block">
-            <p class="meta">Mishnah Ketubot 3:1</h3>
+            <p class="meta">Mishnah Ketubot 3:1</p>
             <p class="answer">Men who rape a relative or a mensturating woman are forced to pay the woman a financial penalty. This is because [reason].</p>
-            <p class="meta">Talmud TKTKTK 3:1</h3>
+            <p class="meta">Talmud TKTKTK 3:1</p>
             <p class="aside">The Talmud then notes that Mishnah Makkot 3:1 states that in the same list of scenarios where a man rapes a relative, the man is lashed. However, it is an established principle in Rabbinic law that a person cannot be both lashed and forced to pay a monetary penalty for the same crime.</p>
             <p class="aside no-bottom-margin">The Talmud posits this central question:</p>
             <p class="meta meta-extra-big">Why don't these two Mishnahs contradict each other?</h2>
         </div>
         <div id="ulla" class="talmud section-block answer-ulla">
-            <div id="answer-ulla" class="question-block" data-title="Ulla's Answer">
+            <div id="answer-ulla" class="question-block" data-title="Ulla's Answer: Adolescent Girl vs. Adult Woman">
                 <p class="meta meta-big">Ulla's Answer</p>
-                <p class="answer">Ulla says there is no contradiction because Mishnah Ketubot is referring to an adolescent girl (<em>na'arah</em>) whereas Mishna <em>Makkot</em> is refering to an adult woman (<em>bogeret</em>).</p> 
+                <p class="answer"><span class="popover" data-content="Ulla was a third generation Palestinian Ammora who was active during the late-Third and early-Fourth Centuries. Ulla also made contributions to the Babylonian talmud. He was a student of R. Eleazar ben Pedat.">Ulla</span> says there is no contradiction because Mishnah Ketubot is referring to an adolescent girl (<em>na'arah</em>) whereas Mishna <em>Makkot</em> is refering to an adult woman (<em>bogeret</em>).</p> 
                 <p class="explanation">In the first case, because the man must pay a fine to the girl's father, he is not lashed. In the second case, because there is no fine payed to the father, lashes are the appropriate punishment.</p>
 
-                <div id="ulla-question-1" class="question-block" data-title="What about penalities for shame?">
+                <div id="ulla-question-1" class="question-block" data-title="What about paying for causing shame?">
                     <p class="meta">Question 1</p>
                     <p class="question">But even in the case of an adult woman, doesn't the offender have to pay penalties for causing shame and blemish?</p>
                     <p class="answer"> No, because Makkot is considering a woman who is an "imbecile".</p>
                     <p class="explanation">An imbecile, whether adolescent or mature, has no reputation to lose and her virginity is not worth any monetary amount.</p>
 
-                    <div id="ulla-question-1-a" class="question-block sub-block" data-title="What about penalities for shame?">
+                    <div id="ulla-question-1-a" class="question-block sub-block" data-title="What about paying for causing pain?">
                         <p class="meta">Question 1.A</p>
                         <p class="question">But even if the adult woman is an imbecile, doesn't the offender have to pay penalties for the pain inflicted?</p>
                         <p class="answer">Makkot is referring to a case where the adult woman is seduced, not raped, so she experiences pleasure instead of pain.</p>
@@ -41,30 +53,30 @@
                     </div>
                 </div>
 
-                <div id="ulla-question-2" class="question-block" data-title="Why does Ulla give fines precedence over lashes?">
+                <div id="ulla-question-2" class="question-block" data-title="How does Ulla determine that fines have precedence over lashes?">
                     <p class="meta">Question 2</p>
                     <p class="aside">The Talmud generalizes Ulla's position: when there is a possibility of both fines and lashes, the offender only pays the fine.</p>
                     <p class="question">From where does Ulla know that monetary penalties are given precedence over lashes?</p>
                     <ul class="answer-list">
-                        <li class="answer-block">
+                        <li class="answer-block" data-title="Personal Injury">
                             <p class="meta">Answer A</p>
                             <p class="answer">The rules regarding personal injury.</p>
                             <p class="explanation">The rules regarding personal injury say that given the possibility of both fines and lashes, the offender only pays the fine.</p>
                             <p class="rejection">In personal injury cases the financial penalty is five-fold, so it cannot be extrapolated to the cases of incest in the Mishnah.</p>
                         </li>
-                        <li class="answer-block">
+                        <li class="answer-block" data-title="Edim Zommemim">
                             <p class="meta">Answer B</p>
                             <p class="answer">The rules regarding <em>edim zommemim</em> (scheming witnesses)</p>
                             <p class="explanation">The rules regarding personal injury say that given the possibility of both fines and lashes, the offender only pays the fine.</p>
                             <p class="rejection">In the case of <em>edim zommemim</em>, the scheming witnesses can be punished even if they are not given a warning.</p>
                         </li>
-                        <li class="answer-block">
+                        <li class="answer-block" data-title="Combination of Personal Injury and Edim Zommemim">
                             <p class="meta">Answer C</p>
                             <p class="answer">A combination of the rules regarding personal injury and <em>edim zommemim</em>.</p>
                             <p class="explanation">In both the case of personal injury and in the case of <em>edim zommemim</em>, given the possibility of both fines and lashes, the offender only pays the fine. Therefore it can be extrapolated that in all scenarios the fine takes precedence over lashes.</p>
                             <p class="rejection">Another commonality between the personal injury and <em>edim zommemim</em> is that they are exceptional cases — the personal injury fine is five-fold and <em>edim zommemim</em> do not need a warning — so you cannot extrapolate anything from them.</p>
                         </li>
-                        <li class="answer-block">
+                        <li class="answer-block" data-title="Gezerah Shavah">
                             <p class="meta">Answer D</p>
                             <p class="answer">A <em>gezerah shavah</em> connecting the word "for" (tachas)</p>
                             <p class="explanation">Deuteronomy 22:29 refers to a man raping a virgin having to pay a fine "for he has violated her." Exodus 21:24 says that in cases of assault, the compensation must be "an eye for eye." Because both verses use the Hebrew word "tachas" as the word "for," the anonymous Talmudic editor speculates that Ulla might have concluded that because in the case of assault, monetary fines takes precedence over lashes, that principle also applies in the cases of sexual violation.</p>
@@ -75,38 +87,38 @@
         </div>
 
         <div class="talmud section-block section-joanan">
-            <div id="a" class="question-block">
+            <div id="a" class="question-block" data-title="Rav Johanan's Answer: It's different if you get a warning.">
                 <p class="meta meta-big">Rav Johanan's Answer</p>
-                <p class="answer">Rav Johanan says there is no contradiction because even if both mishnahs are referring to an adolescent girl because Ketubot is referring to a case where the offender received prior warning whereas Makkot is referring to a case where the offender received prior warning.</p>
+                <p class="answer"><span class="popover" data-content="Rav Johanan was a first generation Palestinian Ammora who was active during the Third Century. Johanan was the founder of the rabinnic school in Tiberias.">Rav Johanan</span> says there is no contradiction because even if both mishnahs are referring to an adolescent girl because Ketubot is referring to a case where the offender received prior warning whereas Makkot is referring to a case where the offender received prior warning.</p>
                 <p class="aside">The Talmud generalizes Rav Johanan's position: when there is a possibility of both fines and lashes, the offender is lashed. (In contrast with Ulla's conclusion.)</p>
                 
-                <div class="question-block">
+                <div class="question-block" data-title="How does Johanan determine that lashes have precedence over fines?">
                     <p class="meta">Question 1</p>
-                    <p class="question">From where does Yohanan know that lashes take precedence over monetary penalties?</p>
+                    <p class="question">From where does Johanan know that lashes take precedence over monetary penalties?</p>
                     <p class="answer">Deuteronomy 25:2-3</p>
                     <p class="explanation">Deuteronomy says "The judge shall cast him down and lash him...in accordance with his wickedness. Forty [lashes] he shall strike him." Because wickedness is a singular noun and it is followed by a count of lashes, the Talmud infers that lashes take precedence.</p>
                     <p class="rejection">In the cases of personal injury and <em>edim zommemim</em>, fines take precedence over lashes.</p>
 
-                    <div class="question-block">
+                    <div class="question-block" data-title="R. Meir resolves exceptions in Johanan's answer">
                         <p class="meta">Question 1.A <span>to resolve rejection in Question 1</span></p>
                         <p class="question">Why don't these exceptions raise a contradiction?</p>
-                        <p class="answer">In the context of Mishnah Makkot 1:2 in which R. Meir says that <em>edim zommememim</em> both pay the fine and are lashed and in which the Sages say that "whoever pays is not lashed."</p>
+                        <p class="answer">In the context of Mishnah Makkot 1:2 in which <span class="popover" data-content="TKTKTK">R. Meir</span> says that <em>edim zommememim</em> both pay the fine and are lashed and in which the Sages say that "whoever pays is not lashed."</p>
 
-                        <div class="question-block">
+                        <div class="question-block" data-title="Why do the Sages say that fines take precedence over lashes?">
                             <p class="meta">Question 1.A.i</p>
                             <p class="question">Why do the Sages say that fines take precedence over lashes?</p>
-                            <p class="answer">R. Illa said that the Torah makes it clear that for <em>edim zommemim</em>, paying a penalty excludes the schemer from receiving lashes.</p>
+                            <p class="answer"><span class="popover" data-content="Rav Ilaa was a third generation Palestinian Ammora who was active during late-Third and early-Fourth Centuries. He was a student of R. Jochanan and R. Shimon ben Lakish.">R. Illa</span> said that the Torah makes it clear that for <em>edim zommemim</em>, paying a penalty excludes the schemer from receiving lashes.</p>
 
-                            <div class="question-block sub-block">
+                            <div class="question-block sub-block" data-title="Where does the Torah say this?">
                                 <p class="meta">Question 1.A.i.a</p>
                                 <p class="question">Where does the Torah say this?</p>
-                                <ul class="answer-list">
+                                <ul class="answer-list" data-title="Midrashic analysis of Deuteronomy 19">
                                     <li class="answer-block">
                                         <p class="meta">Answer A</p>
                                         <p class="answer">Midrashic analysis of Deuteronomy 19</p>
                                         <p class="explanation">Duet 19:19 says, in the context of edim zommemim, "And you shall do to him as he conspired to do to his brother." This is repetitive with Deut 19:21, "hand for hand." The superfluous verse implies that because money is passed from one hand to another, fines take precedence.</p>
                                     </li>
-                                    <li class="answer-block">
+                                    <li class="answer-block" data-title="Midrashic analysis of Leviticus 24">
                                         <p class="meta">Answer B</p>
                                         <p class="answer">Midrashic analysis of Leviticus 24</p>
                                         <p class="explanation">Lev. 24:19 says "if a man inflicts a wound in his fellow, as he did so shall it be done to him." Lev 24:20 says "just as he gave a would in person, so shall it be given to him." The second phrase is deemed superfluous and is there to teach that the punishment involves something that is given: money.</p>
@@ -117,21 +129,21 @@
                     </div>
                 </div>
 
-                <div class="question-block">
+                <div class="question-block" data-title="Why doesn't Johanan agree with Ulla?">
                     <p class="meta">Question 2</p>
                     <p class="question">Why does Rav Johanan not agree with Ulla?</p>
                     <p class="answer">Accepting Ulla would mean annulling the law "the nakedness of your sister you shall not reveal." (Lev. 18:9)</p>
                     <p class="explanation">Lev 18 says that in all cases of incest, the man must be lashed for seeing his sister naked. However, Ulla says that an offender is not lashed if he inappropriately sleeps with an adolescent girl. Johanan doesn't like this contradiction.</p>
                     
-                    <div class="question-block rejection-block sub-block">
+                    <div class="question-block rejection-block sub-block" data-title="Talmud rejects Johanan's explanation">
                         <p class="meta">Rejection <span>of Johanan's answer to Question 2</span></p>
                         <ul class="answer-list">
-                            <li class="answer-block">
+                            <li class="answer-block" data-title="Scenario A: Personal Injury">
                                 <p class="meta">Scenario A</p>
                                 <p class="answer">Rav Johanan would annul the verse about personal injury, "Forty [lashes] he shall strike him. He shall not exceed this..."? (Duet 25:2-3)</p>
                                 <p class="explanation">This verse contradicts Johanan's belief that lashes take precedence over payment; in most cases of personal injury, the punishment is monetary.</p>
                             </li>
-                            <li class="answer-block">
+                            <li class="answer-block" data-title="Scenario B: Edim Zommemim">
                                 <p class="meta">Scenario B</p>
                                 <p class="answer">Rav Johanan would annul the verse about edim zommemim, "And it shall be, if the wicked man is punishable by lashes"? (Duet 25:2)</p>
                                 <p class="explanation">This verse contradicts Johanan's belief that lashes take precedence over payment. Edim zommemim can only be punished with lashes if exceptional circumstances where the quid-pro-quo punishment isn't applicable.</p>
@@ -147,34 +159,33 @@
                     <p class="meta">Question 3</p>
                     <p class="aside">The Talmud now revisits the discussion of Answer 1 to Question 1.A.i.a, where it suggests that for <em>edim zommemim</em>, payment takes precedence over lashes.
                     <p class="question">Why do <em>edim zommemim</em> pay a fine but are not lashed?</p>
-                    <p class="answer">R. Elazar says because they are not given an offical warning.</p>
+                    <p class="answer"><span class="popover" data-content="Rav Eliezer (Eleazar ben Pedat) was a second generation Palestinian Ammora who was active during the Fourth Century.">R. Elazar</span> says because they are not given an offical warning.</p>
 
                     <div class="question-block">
                         <p class="meta">Question 3.A</p>
                         <p class="question">How do we know this?</p>
-                        <p class="answer">Raba says it's impossible to warn scheming witnesses.</p>
+                        <p class="answer"><span class="popover" data-content="TKTKTK">Raba</span> says it's impossible to warn scheming witnesses.</p>
                         <p class="explanation">Raba cites three scenarios. If you warn them beforehand, <em>edim zommemim</em> will just say that they forgot. If you warn every person right at the moment before they testify, then nobody will ever testify. Warning them at the end serves no purpose.</p>
                         
                         <ul class="answer-list">
                             <li class="answer-block rejection-block">
                                 <p class="meta">Abaye's Rejection <span>to Raba's answer to Question 3.A</span></p>
-                                <p class="answer">Abaye says it's possible to warn them immediately after they testify and give them the option to recant their testimony.</p>
+                                <p class="answer"><span class="popover" data-content="TKTKTKTK">Abaye</span> says it's possible to warn them immediately after they testify and give them the option to recant their testimony.</p>
                             </li>
                             <li class="answer-block rejection-block">
                                 <p class="meta">R. Aha's Rejection <span>to Raba's answer to Question 3.A</span></p>
-                                <p class="answer">Rav Aha says to warn them from the beginning and give them "hints" to remind the witnesses throughout the testimony so they can't claim to have forgotten.</p>
+                                <p class="answer"><span class="popover" data-content="TKTKTK">Rav Aha</span> says to warn them from the beginning and give them "hints" to remind the witnesses throughout the testimony so they can't claim to have forgotten.</p>
                             </li>
                         </ul>
 
                         <div class="question-block">
                             <p class="meta">Question 3.A.i <span>where Abaye Retracts his Rejection</span></p>
-                            <p class="question">Abaye asks: If we conclude that <em>edim zommemim</em> don't need a warning, then could they get the death penalty.</p>
+                            <p class="question">Abaye asks: If we conclude that <em>edim zommemim</em> don't need a warning, then could they get the death penalty?</p>
                             <p class="answer">Abaye retracts his rejection</p>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
     <script src="script.js"></script>
 </body>

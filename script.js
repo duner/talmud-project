@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     questionBlocks = $('.question-block');
     for (var i = 0; i < questionBlocks.length; i++) {
         $element = $(questionBlocks[i]);
@@ -7,6 +8,15 @@ $(document).ready(function() {
             createWaypoints($element);
         }
     }
+
+    $('.popover').webuiPopover({
+        width: 300,
+    });
+
+
+    window.onscroll = function() {
+        removeLabelsIfNoSpace(questionBlocks);
+    };
 
     function createLabel(element) {
         label = "<div class='label'>" + $(element).data('title') + "</div>";
@@ -20,10 +30,11 @@ $(document).ready(function() {
         var waypointDisplayLabel = new Waypoint.Inview({
             element: $element,
             enter: function(direction) {
-                $label.addClass("active");
                 if (direction == "down") {
                     $label.addClass("floating");
                     $label.removeClass("fixed");
+                } else {
+                    $label.addClass("active");
                 }
             },
             entered: function(direction) {
@@ -36,21 +47,50 @@ $(document).ready(function() {
                 if (direction == 'up') {
                     $label.removeClass("fixed");
                     $label.addClass("floating");
+                } else {
                 }
             },
             exited: function(direction) {
-                $label.removeClass("active");
+                console.log(direction)
+                if (direction == 'up') {
+                    $label.addClass('exited-up')
+                } else {
+                    $label.removeClass('exited-up')
+                }
+                $label.removeClass('floating');
+                $label.addClass('fixed');
             }
         });
     }
 
-    function elementTopInViewport(el) {
-        var top = el.offsetTop;
-        return (top < window.pageYOffset);
+    function removeLabelsIfNoSpace($questionBlocks, $label) {
+        for (var i = 0; i < $questionBlocks.length; i++) {
+            var $element = $(questionBlocks[i])
+            var $label = $element.children('.label');
+            if ($element.data('title') !== undefined) {
+                var result = checkIfEnoughSpace($element, $label);
+                if (result) {
+                    $label.removeClass('active');
+                } else {
+                    $label.addClass('active');
+                }
+            }
+        }
     }
 
-    function elementBottomInViewport(el) {
-        var bottom = $(el).offset().top + $(el).height();
-        return (bottom < window.pageYOffset);
+    function checkIfEnoughSpace($questionBlock, $label) {
+        var offset = 20;
+        var heightOfLabel = $label.width();
+        var eTopRelativeToWindow =  Waypoint.viewportHeight() - Math.abs($questionBlock.offset().top - $(window).scrollTop());
+
+        var isTopVisible = $questionBlock.offset().top > $(window).scrollTop();
+        var doesItFitInWindow = heightOfLabel + offset < eTopRelativeToWindow;
+        var doesItFitInParent = heightOfLabel + offset < $questionBlock.height();
+
+        if ((!isTopVisible && !doesItFitInWindow) || (doesItFitInParent && doesItFitInWindow)) { 
+            return false; 
+        } else { 
+            return true;
+        }
     }
 });
