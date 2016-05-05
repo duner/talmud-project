@@ -13,7 +13,6 @@ $(document).ready(function() {
         width: 300,
     });
 
-
     window.onscroll = function() {
         removeLabelsIfNoSpace(questionBlocks);
     };
@@ -51,21 +50,15 @@ $(document).ready(function() {
                 }
             },
             exited: function(direction) {
-                console.log(direction)
-                if (direction == 'up') {
-                    $label.addClass('exited-up')
-                } else {
-                    $label.removeClass('exited-up')
-                }
                 $label.removeClass('floating');
                 $label.addClass('fixed');
             }
         });
     }
 
-    function removeLabelsIfNoSpace($questionBlocks, $label) {
+    function removeLabelsIfNoSpace($questionBlocks) {
         for (var i = 0; i < $questionBlocks.length; i++) {
-            var $element = $(questionBlocks[i])
+            var $element = $(questionBlocks[i]);
             var $label = $element.children('.label');
             if ($element.data('title') !== undefined) {
                 var result = checkIfEnoughSpace($element, $label);
@@ -79,7 +72,7 @@ $(document).ready(function() {
     }
 
     function checkIfEnoughSpace($questionBlock, $label) {
-        var offset = 20;
+        var offset = 30;
         var heightOfLabel = $label.width();
         var eTopRelativeToWindow =  Waypoint.viewportHeight() - Math.abs($questionBlock.offset().top - $(window).scrollTop());
 
