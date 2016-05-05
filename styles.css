@@ -188,4 +188,5 @@ span.popover:before {
 
 span.popover:hover {
     background-color: #aaa;
+    cursor: pointer;
 }

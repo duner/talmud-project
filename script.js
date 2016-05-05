@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    questionBlocks = $('.question-block');
+    var questionBlocks = $('.question-block');
     for (var i = 0; i < questionBlocks.length; i++) {
         $element = $(questionBlocks[i]);
         if ($element.data('title') !== undefined) {
@@ -35,23 +35,26 @@ $(document).ready(function() {
                 } else {
                     $label.addClass("active");
                 }
+                $(window).resize();
             },
             entered: function(direction) {
                 if (direction == "down") {
-                    $label.addClass("fixed");
                     $label.removeClass("floating");
+                    $label.addClass("fixed");
                 }
+                $(window).resize();
             },
             exit: function(direction) {
                 if (direction == 'up') {
                     $label.removeClass("fixed");
                     $label.addClass("floating");
-                } else {
                 }
+                $(window).resize();
             },
             exited: function(direction) {
                 $label.removeClass('floating');
                 $label.addClass('fixed');
+                $(window).resize();
             }
         });
     }
